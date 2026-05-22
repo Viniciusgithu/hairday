@@ -7,7 +7,10 @@
     "Backend"
   ],
   "scripts": {
-    "dev": "npm run dev --workspaces --if-present",
+    "dev": "concurrently \"npm run dev -w Backend\" \"npm run dev -w Frontend\"",
     "build": "npm run build --workspaces --if-present"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
   }
 }

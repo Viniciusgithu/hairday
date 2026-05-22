@@ -6,6 +6,8 @@ const app = fastify({ logger: true });
 
 app.register(cors, {
   origin: true, // Em produção, colocar a URL do frontend
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
 });
 
 // Registra as rotas
